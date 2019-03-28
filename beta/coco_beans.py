@@ -164,7 +164,7 @@ def process_blasr_for_repeat(fasta_filename, blasr_filename, config):
                                     max_missed_before_len=config.max_missed_before,\
                                     max_missed_after_len=config.max_missed_after):
         newrec = trim_seq(d[r1.qID], r1, r2)
-        newseq = newrec.seq.tostring()
+        newseq = str(newrec.seq)
         intervals, tally = sp2.count_repeats(newseq, config.motifs)
         sp2.sanity_check(newseq, config.motifs, tally)
         masked_seq = sp2.mask_repeats_in_sequence(newseq, intervals)

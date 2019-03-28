@@ -30,9 +30,9 @@ def main(ccs_fasta, flnc_fasta, primer_csv):
         if rec['threeseen']=='1' and rec['fiveseen']=='1' and rec['polyAseen']=='1' and rec['chimera']=='0':
             # is FLNC
             end3 = int(rec['threeend'])
-            flog.write("{0}\t{1}\t{2}".format(rec['id'], len(r.seq)-end3, r.seq[end3:].tostring()))
+            flog.write("{0}\t{1}\t{2}".format(rec['id'], len(r.seq)-end3, str(r.seq[end3:])))
             for i,aligner in enumerate(aligners):
-                o = aligner.align(r.seq[end3:].tostring())
+                o = aligner.align(str(r.seq[end3:]))
                 cands.append((i, o.score, o.ref_end-o.ref_begin))
                 flog.write("\t{0}".format(o.score))
             flog.write("\n")

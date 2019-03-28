@@ -105,4 +105,4 @@ if __name__ == "__main__":
     for r in SeqIO.parse(open(fasta_filename), 'fasta'):
         for j in xrange(args.copy):
             ith += 1
-            print(">{0}_{1}_{2}\n{3}".format(idpre, ith, r.id[:r.id.find('|')], sim_seq(r.seq.tostring(), profile)))
+            print(">{0}_{1}_{2}\n{3}".format(idpre, ith, r.id[:r.id.find('|')], sim_seq(str(r.seq), profile)))

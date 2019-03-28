@@ -1,3 +1,7 @@
+# VBCF.NGS changes
+
+- It seems that the `Seq` class of biopython no longer has a `.tostring()` method. Replaced it with `str(...)`.
+
 # cDNA_Cupcake
 
 Last Updated: 03/27/2019

@@ -115,5 +115,5 @@ if __name__ == "__main__":
         print >> sys.stderr, "making {0}".format(d2)
         os.makedirs(d2)
         os.chdir(d2)
-        simulate_phasing_data(r.seq.tostring(), args.err_sub, args.ploidity, copies, args.write_fastq)
+        simulate_phasing_data(str(r.seq), args.err_sub, args.ploidity, copies, args.write_fastq)
         os.chdir('../')
